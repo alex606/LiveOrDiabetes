@@ -10,7 +10,10 @@ GameObject:
   - 4: {fileID: 444294}
   - 212: {fileID: 21232300}
   - 95: {fileID: 9574774}
-  m_Layer: 0
+  - 50: {fileID: 5004014}
+  - 58: {fileID: 5899732}
+  - 114: {fileID: 11420278}
+  m_Layer: 10
   m_Name: SawBlade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,11 +27,42 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127856}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 5.618043, y: -4.448476, z: 0}
+  m_LocalPosition: {x: 2.364218, y: 3.9346995, z: 0}
   m_LocalScale: {x: 0.12395527, y: 0.12395527, z: 0.12395527}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5004014
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127856}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &5899732
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127856}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.0000014
 --- !u!95 &9574774
 Animator:
   serializedVersion: 3
@@ -46,6 +80,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11420278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8822b70db47814e4b8050f15b07d5d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageToGive: 100
 --- !u!212 &21232300
 SpriteRenderer:
   m_ObjectHideFlags: 1
