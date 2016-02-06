@@ -18,6 +18,8 @@ public class CharacterController2D : MonoBehaviour
     public bool HandleCollisions { get; set; }
     public ControllerParameters2D Parameters { get{ return _overrideParameters ?? DefaultParameters; } } // return _overrideParameters if not null, otherwise return DefaultParameters
     public GameObject StandingOn { get; private set; }
+    public Vector3 PlatformVelocity { get; private set; }
+
     public bool CanJump
     {
         get
@@ -39,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
     private ControllerParameters2D _overrideParameters;
     private Vector3 _raycastTopLeft, _raycastBottomRight, _raycastBottomLeft;
     private float _jumpIn;
+    private Vector3 _activeGlobalPlatformPoint, _activeLocalPlatformPoint;
 
     private float _verticalDistanceBetweenRays;
     private float _horizontalDistanceBetweenRays;
@@ -114,8 +117,6 @@ public class CharacterController2D : MonoBehaviour
 
         _transform.Translate(deltaMovement, Space.World);
 
-        // Todo: Handle additional moving platform code
-
         if (Time.deltaTime > 0)
             _velocity = deltaMovement / Time.deltaTime;
 
@@ -126,11 +127,33 @@ public class CharacterController2D : MonoBehaviour
         {
             _velocity.y = 0;
         }
+
+        if(StandingOn != null)
+        {
+            _activeGlobalPlatformPoint = transform.position;
+            _activeLocalPlatformPoint = StandingOn.transform.InverseTransformPoint(transform.position);
+
+            Debug.DrawLine(transform.position, _activeGlobalPlatformPoint);
+            Debug.DrawLine(transform.position, _activeLocalPlatformPoint);
+        }
     }
 
     private void HandlePlatforms()
     {
+        if (StandingOn != null)
+        {
+            var newGlobalPlatformPoint = StandingOn.transform.TransformPoint(_activeLocalPlatformPoint);
+            var moveDistance = newGlobalPlatformPoint - _activeGlobalPlatformPoint;
 
+            if (moveDistance != Vector3.zero)
+                transform.Translate(moveDistance, Space.World);
+
+            PlatformVelocity = (newGlobalPlatformPoint - _activeGlobalPlatformPoint) / Time.deltaTime;
+        }
+        else
+            PlatformVelocity = Vector3.zero;
+
+        StandingOn = null;
     }
 
     private void CalculateRayOrigins()

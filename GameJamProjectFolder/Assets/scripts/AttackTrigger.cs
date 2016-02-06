@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
 public class attackTrigger : MonoBehavior 
@@ -13,4 +13,4 @@ public class attackTrigger : MonoBehavior
 			col.SendMessageUpwards("Damage", dmg)
 		}
 	}
-}
+}*/

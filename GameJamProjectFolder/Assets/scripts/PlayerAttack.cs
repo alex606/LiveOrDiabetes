@@ -1,4 +1,4 @@
- using UnityEngine;
+/* using UnityEngine;
  using System.Collections;
  
  public class playerAttack : MonoBehavior {
@@ -51,4 +51,4 @@
 		
 		anim.SetBool("Attacking", attacking);
 	}
- }
+ }*/
