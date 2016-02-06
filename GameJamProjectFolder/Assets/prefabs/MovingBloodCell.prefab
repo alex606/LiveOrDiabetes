@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 402742}
   - 114: {fileID: 11425686}
   m_Layer: 0
-  m_Name: MovingPlatformPrefab
+  m_Name: MovingBloodCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
