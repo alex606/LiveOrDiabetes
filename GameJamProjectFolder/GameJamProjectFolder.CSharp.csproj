@@ -64,10 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\AttackTrigger.cs" />
+    <Compile Include="Assets\scripts\CameraController.cs" />
     <Compile Include="Assets\scripts\CharacterController2D.cs" />
     <Compile Include="Assets\scripts\ControllerParameters2D.cs" />
     <Compile Include="Assets\scripts\ControllerState2D.cs" />
     <Compile Include="Assets\scripts\FollowPath.cs" />
+    <Compile Include="Assets\scripts\LevelManager.cs" />
     <Compile Include="Assets\scripts\PathDefinition.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\PlayerAttack.cs" />
