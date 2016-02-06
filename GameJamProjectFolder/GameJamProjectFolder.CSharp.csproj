@@ -58,23 +58,19 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scripts\AttackTrigger.cs" />
     <Compile Include="Assets\scripts\CharacterController2D.cs" />
     <Compile Include="Assets\scripts\ControllerParameters2D.cs" />
     <Compile Include="Assets\scripts\ControllerState2D.cs" />
     <Compile Include="Assets\scripts\FollowPath.cs" />
     <Compile Include="Assets\scripts\PathDefinition.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
+    <Compile Include="Assets\scripts\PlayerAttack.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
