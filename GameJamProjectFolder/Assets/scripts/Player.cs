@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     public float Health { get; private set; }
 
-    public bool IsDead { get; private set; }
+    //public bool IsDead { get; private set; }
     public void Awake()
     {
         _controller = GetComponent<CharacterController2D>();
