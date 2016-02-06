@@ -56,6 +56,17 @@ public class Player : MonoBehaviour
         transform.position = spawnpoint.position;
     }
 
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+
+        if(Health <= 0)
+        {
+            Debug.Log("PLAYER KILLED");
+        }
+            
+    }
+
     private void HandleInput()
     {
         if (Input.GetKey(KeyCode.D)
