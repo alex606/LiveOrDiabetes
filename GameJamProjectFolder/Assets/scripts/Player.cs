@@ -10,11 +10,16 @@ public class Player : MonoBehaviour
     public float MaxSpeed = 8;
     public float SpeedAccelerationOnGround = 10f;
     public float SpeedAccelerationInAir = 5f;
+    public float MaxHealth = 100;
+
+    public float Health { get; private set; }
+    public bool IsDead { get; private set; }
 
     public void Start()
     {
         _controller = GetComponent<CharacterController2D>();
         _isFacingRight = transform.localScale.x > 0;
+        Health = MaxHealth;
     }
 
     public void Update()
