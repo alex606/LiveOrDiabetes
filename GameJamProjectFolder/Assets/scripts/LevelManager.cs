@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 
     public LevelStart DebugSpawn;
 
-    public void Akake()
+    public void Awake()
     {
         Instance = this;
 
