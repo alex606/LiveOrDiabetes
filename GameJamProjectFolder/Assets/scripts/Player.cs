@@ -5,12 +5,14 @@ public class Player : MonoBehaviour
 {
     private bool _isFacingRight;
     private CharacterController2D _controller;
+    private HealthController _healthController;
     private float _normalizedHorizontalSpeed;
 
     public float MaxSpeed = 8;
     public float SpeedAccelerationOnGround = 10f;
     public float SpeedAccelerationInAir = 5f;
     public int MaxHealth = 100;
+    public GameObject HealthBar;
     // public GameObject OuchEffect;
 
     public int Health { get; private set; }
@@ -19,6 +21,8 @@ public class Player : MonoBehaviour
     public void Awake()
     {
         _controller = GetComponent<CharacterController2D>();
+        _healthController = HealthBar.GetComponent<HealthController>();
+        _healthController.ResetHealth();
         _isFacingRight = transform.localScale.x > 0;
         Health = MaxHealth;
     }
@@ -55,6 +59,7 @@ public class Player : MonoBehaviour
         GetComponent<Collider2D>().enabled = true;
         _controller.HandleCollisions = true;
         Health = MaxHealth;
+        _healthController.ResetHealth();
 
         transform.position = spawnpoint.position;
     }
@@ -63,7 +68,7 @@ public class Player : MonoBehaviour
     {
         // Instantiate(OuchEffect, transform.position, transform.rotation);
         Health -= damage;
-
+        _healthController.UpdateHealth(Health, MaxHealth);
         if(Health <= 0)
         {
             LevelManager.Instance.KillPlayer();
