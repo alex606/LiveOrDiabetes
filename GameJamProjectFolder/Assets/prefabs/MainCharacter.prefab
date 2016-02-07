@@ -48,6 +48,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &142398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 418764}
+  - 61: {fileID: 6140628}
+  m_Layer: 0
+  m_Name: AttackTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &167674
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +125,7 @@ GameObject:
   - 114: {fileID: 11477326}
   - 50: {fileID: 5076606}
   - 61: {fileID: 6195614}
+  - 114: {fileID: 11427778}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -140,6 +157,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 484908}
   m_RootOrder: 5
+--- !u!4 &418764
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 484908}
+  m_RootOrder: 6
 --- !u!4 &446658
 Transform:
   m_ObjectHideFlags: 1
@@ -183,7 +212,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.54, y: 2.45, z: 0}
+  m_LocalPosition: {x: -15.832559, y: 1.5169609, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 446658}
@@ -192,6 +221,7 @@ Transform:
   - {fileID: 450664}
   - {fileID: 464294}
   - {fileID: 417538}
+  - {fileID: 418764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &497330
@@ -223,6 +253,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &6140628
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.82, y: -0.43}
+  serializedVersion: 2
+  m_Size: {x: 0.65, y: 1.69}
 --- !u!61 &6195614
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -254,6 +298,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11427778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107df35563766874481dc2df4ba617b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTrigger: {fileID: 6140628}
 --- !u!114 &11477326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,6 +346,7 @@ MonoBehaviour:
   SpeedAccelerationOnGround: 10
   SpeedAccelerationInAir: 5
   MaxHealth: 100
+  HealthBar: {fileID: 0}
   Animator: {fileID: 9537392}
 --- !u!212 &21210478
 SpriteRenderer:

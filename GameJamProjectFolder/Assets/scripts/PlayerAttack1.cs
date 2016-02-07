@@ -10,6 +10,8 @@ public class PlayerAttack1 : MonoBehaviour
 
     public Collider2D attackTrigger;
 
+    public bool IsAttacking { get { return _attacking;  } }
+
     private Animator _animator;
 
     public void Awake()
