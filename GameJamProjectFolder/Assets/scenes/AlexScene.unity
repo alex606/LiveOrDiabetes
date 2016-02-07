@@ -303,6 +303,22 @@ Prefab:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1157485284}
+    - target: {fileID: 11479302, guid: 6ac102bc42fb6de4482f29e698588c43, type: 2}
+      propertyPath: PlayerHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ba902b4b86d5b046a265fecd75da30a, type: 3}
+    - target: {fileID: 11479302, guid: 6ac102bc42fb6de4482f29e698588c43, type: 2}
+      propertyPath: PlayerMeleeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 61245476ef3ec224db744b2e8815634b, type: 3}
+    - target: {fileID: 11479302, guid: 6ac102bc42fb6de4482f29e698588c43, type: 2}
+      propertyPath: PlayerShootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c0a8df8e8a50164dbddec06f8a0d635, type: 3}
+    - target: {fileID: 11479302, guid: 6ac102bc42fb6de4482f29e698588c43, type: 2}
+      propertyPath: PlayerDeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ac545c9a694f804d9f37e2f03717c7c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac102bc42fb6de4482f29e698588c43, type: 2}
   m_IsPrefabParent: 0
@@ -697,7 +713,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420278, guid: 9ef25103afd7a444890f49d553e546f2, type: 2}
       propertyPath: DamageToGive
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ef25103afd7a444890f49d553e546f2, type: 2}

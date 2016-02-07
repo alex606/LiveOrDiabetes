@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class SimpleEnemyAi : MonoBehaviour
+public class SimpleEnemyAi : MonoBehaviour, ITakeDamage
 {
     public float Speed;
     public float FireRate = 1;
@@ -29,5 +30,18 @@ public class SimpleEnemyAi : MonoBehaviour
         }
 
 
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Knife")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void TakeDamage(int damage, GameObject instigator)
+    {
+        throw new NotImplementedException();
     }
 }

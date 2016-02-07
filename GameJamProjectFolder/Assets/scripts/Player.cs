@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private CharacterController2D _controller;
     private HealthController _healthController;
     private float _normalizedHorizontalSpeed;
+    private bool _hasGun;
 
     public float MaxSpeed = 8;
     public float SpeedAccelerationOnGround = 10f;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
 
     public int Health { get; private set; }
     public bool IsDead { get; private set; }
+    public bool HasGun { get { return _hasGun; } }
 
     public Animator Animator;
     private float _canFireIn;
