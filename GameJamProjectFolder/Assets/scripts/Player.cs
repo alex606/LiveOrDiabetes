@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         _healthController.ResetHealth();
         _isFacingRight = transform.localScale.x > 0;
         Health = MaxHealth;
+        _hasGun = false;
     }
 
     public void Update()
