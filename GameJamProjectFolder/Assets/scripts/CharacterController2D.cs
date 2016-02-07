@@ -98,6 +98,10 @@ public class CharacterController2D : MonoBehaviour
 
     private void Move(Vector2 deltaMovement)
     {
+        if(transform.position.y < -100)
+        {
+
+        }
         var wasGrounded = State.IsCollidingBelow;
         State.Reset();
 
