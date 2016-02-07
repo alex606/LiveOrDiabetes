@@ -63,6 +63,22 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    public void GoToNextLevel(string LevelName)
+    {
+        StartCoroutine(GoToNextLevelCo(LevelName));
+    }
+
+    private IEnumerator GoToNextLevelCo(string LevelName)
+    {
+        Player.FinishLevel();
+        yield return new WaitForSeconds(2f);
+
+        if (string.IsNullOrEmpty(LevelName))
+            Application.LoadLevel("StartScene");
+        else
+            Application.LoadLevel(LevelName);
+    }
+
     public void KillPlayer()
     {
         DeathCount++;

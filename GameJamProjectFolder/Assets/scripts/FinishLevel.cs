@@ -3,13 +3,16 @@ using System.Collections;
 
 public class FinishLevel : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    public string LevelName;
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.GetComponent<Player>() == null)
+        {
+            return;
+        }
+
+        LevelManager.Instance.GoToNextLevel(LevelName);
+    }
 }

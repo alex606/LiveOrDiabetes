@@ -61,7 +61,11 @@ public class Player : MonoBehaviour
         Animator.SetFloat("Speed", Mathf.Abs(_controller.Velocity.x) / MaxSpeed);
         Animator.SetBool("IsAttacking", GetComponent<PlayerAttack1>().IsAttacking);
     }
-
+    public void FinishLevel()
+    {
+        enabled = false;
+        _controller.enabled = false;
+    }
 
     public void Kill()
     {
