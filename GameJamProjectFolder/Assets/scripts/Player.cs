@@ -105,6 +105,12 @@ public class Player : MonoBehaviour
             
     }
 
+    public void GiveHealth(int health, GameObject instagator)
+    {
+        this.Health = Mathf.Min(health + Health, MaxHealth);
+        _healthController.UpdateHealth(Health, MaxHealth);
+    }
+
     private void HandleInput()
     {
         if (Input.GetKey(KeyCode.D)

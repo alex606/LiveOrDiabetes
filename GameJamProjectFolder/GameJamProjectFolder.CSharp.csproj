@@ -74,6 +74,7 @@
     <Compile Include="Assets\scripts\GameHud.cs" />
     <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\GiveDamageToPlayer.cs" />
+    <Compile Include="Assets\scripts\GiveHealth.cs" />
     <Compile Include="Assets\scripts\HealthController.cs" />
     <Compile Include="Assets\scripts\ITakeDamage.cs" />
     <Compile Include="Assets\scripts\InstaKill.cs" />
