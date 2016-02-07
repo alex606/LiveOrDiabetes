@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     public float MaxHealth = 100;
 
     public float Health { get; private set; }
-    public bool IsDead { get; private set; }
 
     public bool IsDead { get; private set; }
     public void Awake()
