@@ -6,11 +6,15 @@ public class SimpleEnemyAi : MonoBehaviour, ITakeDamage
 {
     public float Speed;
     public float FireRate = 1;
+    public float TimeUntilDeath = 1.0f;
+    public Animator Animator;
 
     private bool grounded;
     private CharacterController2D _controller;
     private Vector2 _direction;
     private Vector2 _startPosition;
+    private bool _beingKilled;
+    
 
 
     public void Start()
@@ -44,13 +48,24 @@ public class SimpleEnemyAi : MonoBehaviour, ITakeDamage
         }
 
 
+        Animator.SetBool("IsDying", _beingKilled);
+        if(_beingKilled)
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+
+            if(TimeUntilDeath <= 0)
+                Destroy(gameObject);
+
+            TimeUntilDeath -= Time.deltaTime;
+        }
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Knife")
         {
-            Destroy(gameObject);
+            _beingKilled = true;
         }
     }
 
