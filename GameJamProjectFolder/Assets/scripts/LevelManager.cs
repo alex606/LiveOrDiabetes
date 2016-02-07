@@ -11,15 +11,17 @@ public class LevelManager : MonoBehaviour
     public Player Player { get; private set; }
     public CameraController Camera { get; private set; }
 
+    public TimeSpan RunningTime { get { return DateTime.UtcNow - _started; } }
+
     private List<LevelStart> _levelstart;
     private int _currentLevelStartIndex;
+    private DateTime _started;
 
     public LevelStart DebugSpawn;
 
     public void Awake()
     {
         Instance = this;
-
     }
 
     private void Start()
@@ -29,6 +31,8 @@ public class LevelManager : MonoBehaviour
 
         Player = FindObjectOfType<Player>();
         Camera = FindObjectOfType<CameraController>();
+
+        _started = DateTime.UtcNow;
 
 #if UNITY_EDITOR
         if (DebugSpawn != null)
@@ -54,15 +58,14 @@ public class LevelManager : MonoBehaviour
         //_levelstart[_currentLevelStartIndex].PlayerLeftCheckpoint();
         //_currentLevelStartIndex++;
         //_levelstart[_currentLevelStartIndex].PlayerHitCheckpoint();
-        
         //time points
+
     }
 
     public void KillPlayer()
     {
         StartCoroutine(KillPlayerCo());
     }
-
 
     private IEnumerator KillPlayerCo()
     {
