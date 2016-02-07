@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     public float Health { get; private set; }
     public bool IsDead { get; private set; }
 
-    public void Start()
+    public bool IsDead { get; private set; }
+    public void Awake()
     {
         _controller = GetComponent<CharacterController2D>();
         _isFacingRight = transform.localScale.x > 0;
@@ -24,22 +25,48 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
-        HandleInput();
+        if (!IsDead) HandleInput();
 
         var movementFactor = _controller.State.IsGrounded ? SpeedAccelerationOnGround : SpeedAccelerationInAir;
-        _controller.SetHorizontalForce(Mathf.Lerp(_controller.Velocity.x, _normalizedHorizontalSpeed * MaxSpeed, Time.deltaTime * movementFactor));
+
+        if (IsDead)
+            _controller.SetHorizontalForce(0);
+        else
+            _controller.SetHorizontalForce(Mathf.Lerp(_controller.Velocity.x, _normalizedHorizontalSpeed * MaxSpeed, Time.deltaTime * movementFactor));
+    }
+
+
+    public void Kill()
+    {
+        _controller.HandleCollisions = false;
+        GetComponent<Collider2D>().enabled = false;
+        IsDead = true;
+
+        _controller.SetForce(new Vector2(0, 10));
+    }
+
+    public void RespawnAt(Transform spawnpoint)
+    {
+        if (!_isFacingRight)
+            Flip();
+
+        IsDead = false;
+        GetComponent<Collider2D>().enabled = true;
+        _controller.HandleCollisions = true;
+
+        transform.position = spawnpoint.position;
     }
 
     private void HandleInput()
     {
-        if(Input.GetKey(KeyCode.D)
+        if (Input.GetKey(KeyCode.D)
             || Input.GetKey(KeyCode.RightArrow))
         {
             _normalizedHorizontalSpeed = 1;
             if (!_isFacingRight)
                 Flip();
         }
-        else if(Input.GetKey(KeyCode.A)
+        else if (Input.GetKey(KeyCode.A)
             || Input.GetKey(KeyCode.LeftArrow))
         {
             _normalizedHorizontalSpeed = -1;
@@ -51,7 +78,7 @@ public class Player : MonoBehaviour
             _normalizedHorizontalSpeed = 0;
         }
 
-        if(_controller.CanJump && Input.GetKeyDown(KeyCode.Space))
+        if (_controller.CanJump && Input.GetKeyDown(KeyCode.Space))
         {
             _controller.Jump();
         }
