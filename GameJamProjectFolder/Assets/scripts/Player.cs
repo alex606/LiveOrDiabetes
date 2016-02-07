@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         Animator.SetBool("IsGrounded", _controller.State.IsGrounded);
         //Animator.SetBool("IsDead",IsDead);
         Animator.SetFloat("Speed", Mathf.Abs(_controller.Velocity.x) / MaxSpeed);
-
+        Animator.SetBool("IsAttacking", GetComponent<PlayerAttack1>().IsAttacking);
     }
 
 
