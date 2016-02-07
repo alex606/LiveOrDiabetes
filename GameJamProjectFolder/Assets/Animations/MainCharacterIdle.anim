@@ -946,7 +946,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: panarmjump
+    path: panarmidle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -956,7 +956,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: panarmjump
+    path: panarmidle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -966,7 +966,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: panarmjump
+    path: panarmidle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -976,7 +976,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: panarmidle
+    path: panarmjump
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -986,7 +986,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: panarmidle
+    path: panarmjump
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -996,7 +996,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: panarmidle
+    path: panarmjump
     classID: 4
     script: {fileID: 0}
   - curve:
