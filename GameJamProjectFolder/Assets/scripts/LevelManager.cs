@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance { get; private set; }
     public Player Player { get; private set; }
     public CameraController Camera { get; private set; }
+    public int DeathCount;
 
     public TimeSpan RunningTime { get { return DateTime.UtcNow - _started; } }
 
@@ -64,6 +65,7 @@ public class LevelManager : MonoBehaviour
 
     public void KillPlayer()
     {
+        DeathCount++;
         StartCoroutine(KillPlayerCo());
     }
 
