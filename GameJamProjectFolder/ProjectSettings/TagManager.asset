@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Heart1Full
   - Knife
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Platforms
   - Ignore
   - Enemies
-  - 
+  - Weapons
   - 
   - 
   - 

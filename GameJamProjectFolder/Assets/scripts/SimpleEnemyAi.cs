@@ -53,8 +53,10 @@ public class SimpleEnemyAi : MonoBehaviour, ITakeDamage
         {
             GetComponent<BoxCollider2D>().enabled = false;
 
-            if(TimeUntilDeath <= 0)
+            if (TimeUntilDeath <= 0)
+            {
                 Destroy(gameObject);
+            }
 
             TimeUntilDeath -= Time.deltaTime;
         }

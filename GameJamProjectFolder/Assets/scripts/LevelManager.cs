@@ -11,18 +11,22 @@ public class LevelManager : MonoBehaviour
     public Player Player { get; private set; }
     public CameraController Camera { get; private set; }
     public int DeathCount;
+    public int EnemiesRemaining;
 
     public TimeSpan RunningTime { get { return DateTime.UtcNow - _started; } }
 
     private List<LevelStart> _levelstart;
     private int _currentLevelStartIndex;
     private DateTime _started;
+    private float _deathCooldown = 2f;
+    private bool _isDying = false;
 
     public LevelStart DebugSpawn;
 
     public void Awake()
     {
         Instance = this;
+        EnemiesRemaining = FindObjectsOfType<SimpleEnemyAi>().Count();
     }
 
     private void Start()
@@ -48,11 +52,25 @@ public class LevelManager : MonoBehaviour
 
     public void Update()
     {
+        EnemiesRemaining = FindObjectsOfType<SimpleEnemyAi>().Count();
+
+        if(_isDying && _deathCooldown >= 0)
+        {
+            _deathCooldown -= Time.deltaTime;
+        }
+        else if(_isDying)
+        {
+            _isDying = false;
+            _deathCooldown = 2f;
+        }
+
         var isAtLastLevelStart = _currentLevelStartIndex + 1 >= _levelstart.Count;
         if (isAtLastLevelStart)
             return;
 
         var distanceToNextCheckPoint = _levelstart[_currentLevelStartIndex + 1].transform.position.x - Player.transform.position.x;
+
+        
 
         if (distanceToNextCheckPoint >= 0)
             return;
@@ -81,7 +99,12 @@ public class LevelManager : MonoBehaviour
 
     public void KillPlayer()
     {
-        DeathCount++;
+        if(_isDying == false)
+        {
+            DeathCount++;
+        }
+        _isDying = true;
+
         StartCoroutine(KillPlayerCo());
     }
 

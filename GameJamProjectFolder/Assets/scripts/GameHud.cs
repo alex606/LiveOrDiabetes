@@ -16,6 +16,7 @@ public class GameHud : MonoBehaviour
                 var time = GetComponent<LevelManager>().RunningTime;
                 GUILayout.Label("Game Time : " + string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds));
                 GUILayout.Label("Number of Deaths : " + GetComponent<LevelManager>().DeathCount);
+                GUILayout.Label("Carb Enemies Left : " + GetComponent<LevelManager>().EnemiesRemaining);
 
             }
             GUILayout.EndVertical();

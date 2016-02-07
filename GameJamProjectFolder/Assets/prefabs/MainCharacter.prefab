@@ -27,7 +27,7 @@ GameObject:
   - 61: {fileID: 6127964}
   m_Layer: 0
   m_Name: AttackTrigger
-  m_TagString: Knife
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,7 +268,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -22.16, y: 1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 446658}
@@ -409,9 +409,9 @@ MonoBehaviour:
   FireRate: 0
   ProjectileFireLocation: {fileID: 0}
   PlayerHitSound: {fileID: 8300000, guid: 1ba902b4b86d5b046a265fecd75da30a, type: 3}
-  PlayerMeleeSound: {fileID: 8300000, guid: 61245476ef3ec224db744b2e8815634b, type: 3}
-  PlayerShootSound: {fileID: 8300000, guid: 4c0a8df8e8a50164dbddec06f8a0d635, type: 3}
-  PlayerDeathSound: {fileID: 8300000, guid: 9ac545c9a694f804d9f37e2f03717c7c, type: 3}
+  PlayerMeleeSound: {fileID: 8300000, guid: 94c8e05527d6b034faa3e27501ed7625, type: 3}
+  PlayerShootSound: {fileID: 0}
+  PlayerDeathSound: {fileID: 8300000, guid: ffa6489801d698c4a8248037b89c38ac, type: 3}
   Animator: {fileID: 9537392}
 --- !u!212 &21210478
 SpriteRenderer:
