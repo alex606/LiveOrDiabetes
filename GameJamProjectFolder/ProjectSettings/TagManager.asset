@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Heart1Full
   - Knife
+  - Enemy
   layers:
   - Default
   - TransparentFX
