@@ -14,7 +14,7 @@ public class GameHud : MonoBehaviour
             GUILayout.BeginVertical();
             {
                 var time = GetComponent<LevelManager>().RunningTime;
-                GUILayout.Label(string.Format("{0:0}:{1:00}", time.Minutes, time.Seconds));
+                GUILayout.Label(string.Format("{0:00}:{1:00}", time.Minutes, time.Seconds));
             }
             GUILayout.EndVertical();
         }
