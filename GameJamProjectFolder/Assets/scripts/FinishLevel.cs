@@ -13,7 +13,7 @@ public class FinishLevel : MonoBehaviour {
         {
             return;
         }
-        if(!RequireKillAll || GetComponent<LevelManager>().EnemiesRemaining == 0)
+        if(!RequireKillAll || LevelManager.Instance.EnemiesRemaining == 0)
             LevelManager.Instance.GoToNextLevel(LevelName);
     }
 }
