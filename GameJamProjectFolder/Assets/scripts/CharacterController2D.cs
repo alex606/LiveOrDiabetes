@@ -300,7 +300,7 @@ public class CharacterController2D : MonoBehaviour
             return true;
 
         deltaMovement.x += isGoingRight ? -SkinWidth : SkinWidth;
-        deltaMovement.y = Mathf.Abs(Mathf.Tan(angle * Mathf.Deg2Rad) * deltaMovement.x);
+        deltaMovement.y = Mathf.Abs(Mathf.Max(Mathf.Tan(angle * Mathf.Deg2Rad),0.6f) * deltaMovement.x);
         State.IsMovingUpSlope = true;
         State.IsCollidingBelow = true;
         return true;
