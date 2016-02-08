@@ -5,6 +5,7 @@ public class FinishLevel : MonoBehaviour {
 
 
     public string LevelName;
+    public bool RequireKillAll = false;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,7 +13,7 @@ public class FinishLevel : MonoBehaviour {
         {
             return;
         }
-
-        LevelManager.Instance.GoToNextLevel(LevelName);
+        if(!RequireKillAll || LevelManager.Instance.EnemiesRemaining == 0)
+            LevelManager.Instance.GoToNextLevel(LevelName);
     }
 }
