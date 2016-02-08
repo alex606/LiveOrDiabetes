@@ -60,11 +60,11 @@ public class LevelManager : MonoBehaviour
 
     public void KillPlayer()
     {
-        StartCoroutine(KillPlauerCo());
+        StartCoroutine(KillPlayerCo());
     }
 
 
-    private IEnumerator KillPlauerCo()
+    private IEnumerator KillPlayerCo()
     {
         Player.Kill();
         Camera.IsFollowing = false;
